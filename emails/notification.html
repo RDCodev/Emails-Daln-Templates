@@ -1,62 +1,76 @@
 ---
 bodyClass: bg-slate-50
 preheader: Notification email template
+receipt: "@{{ receipt }}"
+message: "@{{ message }}"
+receiptEmail: "@{{ receiptEmail }}"
 ---
 
 <x-main>
-  <div class="bg-slate-50 sm:px-4 font-inter">
-    <table align="center" class="m-0 mx-auto">
+  <div class="bg-woodsmoke-50 sm:px-4 font-poppins">
+    <table align="center" class="m-0 mx-auto" role="presentation" cellpadding="0" cellspacing="0">
       <tr>
         <td class="w-[552px] max-w-full">
           <x-spacer height="24px" />
 
+          <table align="center">
+            <tr>
+              <td>
+                <a href="www.daln.dev">
+                  <img src="https://ucarecdn.com/5330ef77-7ab5-49bf-805f-d00e10273cc3/" src-production="images/logo.png" width="70" alt="Daln">
+                </a>
+              </td>
+            </tr>
+          </table>
+
+          <x-spacer height="24px" />
+
           <table class="w-full">
             <tr>
-              <td class="py-6 px-9 sm:p-6 bg-white [border:1px_solid_theme(colors.slate.200)] rounded-lg">
-                <a href="https://maizzle.com">
-                  <img src="favicon.svg" src-production="images/logo.png" width="70" alt="Maizzle">
-                </a>
-
+              <td class="py-6 px-9 sm:p-6 bg-white text-sm [border:1px_solid_theme(colors.slate.200)] rounded-3xl shadow-md">
+                
                 <x-spacer height="24px" />
 
-                <h1 class="m-0 mb-6 font-semibold text-2xl/8 text-slate-900">
-                  Hello there!
-                </h1>
-
-                <p class="m-0 mb-6 text-base/6 text-slate-600">
-                  We're happy to have you on board! Please verify your email address in order to activate your account:
+                <p class="m-0 mb-6 text-woodsmoke-900">
+                  Hi, <span class="font-semibold text-woodsmoke-950">Stalin D. Pillajo</span>
                 </p>
 
+                <p class="m-0 mb-6 ml-3 text-woodsmoke-900">
+                  <span class="font-semibold text-woodsmoke-950">{{ page.receipt }}</span> says,
+                </p>
+
+                <p class="m-0 mb-6 text-woodsmoke-900 text-sm/6">
+                  {{ page.message }}                  
+                </p>
+
+                <p class="m-0 mb-3 text-woodsmoke-950">
+                  {{ page.receiptEmail }} <span class="font-semibold text-woodsmoke-800">&#8226; Email</span>
+                </p>
+
+                <x-spacer height="24px" />
+                
                 <x-button
-                  href="https://maizzle.com"
-                  class="bg-slate-950 hover:bg-slate-800"
+                  href="https://daln.dev"
+                  class="px-5 py-3.5 text-sm font-semibold tracking-wide rounded-lg bg-woodsmoke-900 hover:bg-woodsmoke-800"
                 >
-                  Verify email
-                </x-button>
-
-                <x-spacer height="24px" />
-
-                <p class="m-0 text-base/6 text-slate-600">
-                  Thanks,
-                  <br>
-                  <span class="font-semibold">Maizzle</span>
-                </p>
+                  Response
+                </x-button>           
+                
 
                 <x-divider />
 
                 <p class="m-0 text-xs/5 text-slate-600 mso-break-all">
-                  If you're having trouble clicking the "Verify email" button, copy and paste the following URL into your web browser:
-                  <a href="https://maizzle.com/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0" class="underline text-slate-800">https://maizzle.com/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0</a>
+                  This email was generated automatically, by <a href="www.daln.dev" class="underline text-slate-800">daln.dev</a>.                  
                 </p>
               </td>
             </tr>
-          </table>
+          </table>          
 
           <table class="w-full">
             <tr>
               <td class="py-6 px-9 sm:px-6">
                 <p class="m-0 text-xs text-slate-500">
-                  &copy; {{ new Date().getFullYear() }} Maizzle. All rights reserved.
+                  &copy; {{ new Date().getFullYear() }} Stalin D. Pillajo. All rights reserved.
                 </p>
               </td>
             </tr>
